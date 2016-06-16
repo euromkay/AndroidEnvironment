@@ -5,15 +5,10 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-import shared.logic.Narrator;
-import shared.logic.support.CommunicatorHandler;
-import shared.packaging.Box;
-import shared.packaging.Packager;
-
 
 public class Parcel {
 
-	private Box box = new Box();
+	/*private Box box = new Box();
 	
 
 	public Parcelable getParcelable() {
@@ -30,47 +25,47 @@ public class Parcel {
 			e.printStackTrace();
 			throw new NullPointerException();
 		}
-	}
+	}*/
 
 	public int readInt() {
-		return box.readInt();
+		return 0;
 	}
 
 	public void writeInt(int size) {
-		box.writeInt(size);
+		return;
 		
 	}
 
 	public byte readByte() {
-		return box.readByte();
+		return 0;
 	}
 
 	public void writeByte(byte byt) {
-		box.writeByte(byt);
+		return;
 	}
 
 	public void readStringList(ArrayList<String> list) {
-		box.readStringList(list);
+		return;
 	}
 
 	public void writeIntArray(int[] array) {
-		box.writeIntArray(array);
+		return;
 	}
 
 	public int[] createIntArray() {
-		return box.createIntArray();
+		return null;
 	}
 
 	public void writeString(String s) {
-		box.writeString(s);
+		return;
 	}
 
 	public String readString() {
-		return box.readString();
+		return null;
 	}
 
 	public void writeStringList(List<String> list) {
-		box.writeStringList(list);
+		
 		
 	}
 	

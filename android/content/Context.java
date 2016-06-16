@@ -15,7 +15,7 @@ public class Context{
 
 	public Resources getResources() {
 
-		return new Resources();
+		return new Resources(e);
 	}
 
 	public void sendBroadcast(Intent i) {

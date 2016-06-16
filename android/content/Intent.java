@@ -25,12 +25,12 @@ public class Intent {
 		bundle = b;
 	}
 
-	public Parcelable getParcelableExtra(String key) {
+	/*public Parcelable getParcelableExtra(String key) {
 		Parcel p = (Parcel) map.get(key);
 		if(p == null)
 			return null;
 		return p.getParcelable();
-	}
+	}*/
 	
 	public void putExtra(String key, Parcelable b) {
 		Parcel parcel = new Parcel();

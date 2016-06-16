@@ -23,7 +23,7 @@ import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import voss.narrator.R;
-import shared.logic.Narrator;
+
 
 public abstract class Activity extends ContextThemeWrapper{
 	
@@ -233,5 +233,5 @@ public abstract class Activity extends ContextThemeWrapper{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	public abstract Narrator getNarrator();
+	
 }
