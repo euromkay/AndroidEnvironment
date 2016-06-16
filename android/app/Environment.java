@@ -3,7 +3,6 @@ package android.app;
 import java.util.HashMap;
 
 import android.content.Intent;
-import shared.logic.Narrator;
 
 public class Environment {
 
@@ -11,7 +10,8 @@ public class Environment {
 		
 	}
 	
-	private int i = -1;
+	
+	
 	private Activity a;
 	public Activity startActivity(Class<?> class1, Intent i) {
 		String name = class1.getName();
@@ -41,6 +41,7 @@ public class Environment {
 	
 
 	public HashMap<Class<?>, Service> services = new HashMap<>();
+	private HashMap<Integer, String[]> resources;
 	public Service startService(Class<?> class1, Intent intent) {
 		if(services.containsKey(class1))
 			return services.get(class1);
@@ -71,6 +72,13 @@ public class Environment {
 		for(Service s : services.values()){
 			s.shutdown();
 		}
+	}
+
+	public void setResouces(HashMap<Integer, String[]> resources) {
+		this.resources = resources;
+	}
+	public HashMap<Integer, String[]> getResources(){
+		return resources;
 	}
 
 	
