@@ -1,13 +1,13 @@
 package android.widget;
 
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
-import android.widget.EditText.OnEditorActionListener;
 
 public class EditText extends View{
 
 	public interface OnEditorActionListener {
-
+		public boolean onEditorAction(TextView v, int actionId, KeyEvent event);
 	}
 
 	public EditText(int i) {

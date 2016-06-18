@@ -2,7 +2,6 @@ package android.support.v4.app;
 
 import android.app.PendingIntent;
 import android.content.Context;
-import android.support.v4.app.NotificationCompat.Builder;
 
 public class NotificationCompat {
 

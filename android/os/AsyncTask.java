@@ -1,5 +1,6 @@
 package android.os;
 
+@SuppressWarnings("unchecked")
 public abstract class AsyncTask <Params, Progress, Result> {
 
 	
