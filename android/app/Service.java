@@ -14,6 +14,9 @@ public abstract class Service extends ContextWrapper{
 	public void setIntent(Intent intent) {
 		this.intent = intent;
 		
+		if(intent != null)
+			this.intent.toString();
+		
 	}
 	
 	public int onStartCommand(Intent i, int flags, int startId){

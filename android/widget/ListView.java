@@ -25,8 +25,9 @@ public class ListView extends AdapterView<Object>{
 		checkedItems = new SparseBooleanArray(listingAdapter.getCount());
 	}
 
+	OnItemClickListener listener;
 	public void setOnItemClickListener(OnItemClickListener o){
-		
+		this.listener = o;
 	}
 
 	public void setSelection(int i) {
@@ -60,6 +61,10 @@ public class ListView extends AdapterView<Object>{
 
 	public SparseBooleanArray getCheckedItemPositions() {
 		return checkedItems;
+	}
+
+	public void click(int i) {
+		listener.onItemClick(this, null, i, 0);
 	}
 
 }
