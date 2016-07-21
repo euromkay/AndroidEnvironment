@@ -1,15 +1,14 @@
 package android.widget;
 
-import android.view.View;
-
-public class Button extends View{
+public class Button extends TextView{
 
 	public Button(int i) {
 		super(i);
 	}
 
+	OnClickListener listener;
 	public void setOnClickListener(OnClickListener b) {
-		
+		listener = b;
 	}
 
 	public void setText(String string) {
@@ -18,6 +17,10 @@ public class Button extends View{
 
 	public void setTextColor(int parseColor) {
 		
+	}
+
+	public void click() {
+		listener.onClick(this);
 	}
 
 }

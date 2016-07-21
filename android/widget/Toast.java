@@ -5,18 +5,16 @@ public class Toast {
 	public static final int LENGTH_LONG = 3;
 	public static final int LENGTH_SHORT = 0;
 
+	private static String text;
 	public static Toast makeText(Object baseContext, String s, int lengthLong) {
-		//System.out.println("TOAST \t" + s);
+		text = s;
 		return new Toast();
 	}
 
 	public void show() {
-		
+		//System.out.println(text);
 	}
 
-	public void cancel() {
-		// TODO Auto-generated method stub
-		
-	}
+	public void cancel() {}
 
 }

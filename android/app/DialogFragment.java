@@ -2,11 +2,18 @@ package android.app;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 public class DialogFragment {
 
 	public DialogFragment(){
 		
+	}
+	
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+		return null;
 	}
 	
 	public Dialog onCreateDialog(Bundle b){
@@ -27,6 +34,7 @@ public class DialogFragment {
 		onAttach(a);
 		dialog = onCreateDialog(null);
 		fm.put(this, string);
+		onCreateView(new LayoutInflater(), new ViewGroup(), null);
 	}
 	
 	public void dismiss() {

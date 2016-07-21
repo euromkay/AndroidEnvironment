@@ -29,7 +29,9 @@ public class Log {
 		}
 	}
 	
+	public static boolean i = false;
 	public static void i(String player, String command){
-		System.out.println(player + "\t" + command);
+		if(i)
+			System.out.println(player + "\t" + command);
 	}
 }

@@ -6,7 +6,7 @@ public class PackageManager {
 
 	public PackageInfo getPackageInfo(Object packageName, int i) throws NameNotFoundException{
 		// TODO Auto-generated method stub
-		return null;
+		return new PackageInfo();
 	}
 	
 	public class NameNotFoundException extends Exception{

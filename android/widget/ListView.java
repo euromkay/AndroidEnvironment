@@ -19,7 +19,9 @@ public class ListView extends AdapterView<Object>{
 	}
 
 	SparseBooleanArray checkedItems;
+	public BaseAdapter adapter;
 	public void setAdapter(BaseAdapter listingAdapter) {
+		adapter = listingAdapter;
 		checkedItems = new SparseBooleanArray(listingAdapter.getCount());
 	}
 

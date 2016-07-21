@@ -6,18 +6,24 @@ public class CheckBox extends CompoundButton{
 		super(i);
 	}
 
-	public void setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener setupScreenController) {
-		// TODO Auto-generated method stub
+	CompoundButton.OnCheckedChangeListener listener = null;
+	public void setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener listener) {
+		this.listener = listener; 
 		
+	}
+	
+	public void toggle() {
+		status = !status;
+		listener.onCheckedChanged(this, status);
 	}
 
 	public boolean isChecked() {
-		// TODO Auto-generated method stub
-		return false;
+		return status;
 	}
 
+	boolean status;
 	public void setChecked(boolean b) {
-		// TODO Auto-generated method stub
+		status = b;
 		
 	}
 
@@ -30,6 +36,8 @@ public class CheckBox extends CompoundButton{
 		// TODO Auto-generated method stub
 		
 	}
+
+	
 
 	
 

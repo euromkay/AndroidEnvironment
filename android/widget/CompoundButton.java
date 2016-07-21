@@ -9,7 +9,7 @@ public class CompoundButton extends View{
 	}
 
 	public interface OnCheckedChangeListener {
-
+		public void onCheckedChanged(CompoundButton buttonView, boolean unused);
 	}
 
 }
