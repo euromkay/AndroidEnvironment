@@ -1,10 +1,11 @@
 package android.widget;
 
+import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 
-public class EditText extends View{
+public class EditText extends View implements Editable{
 
 	public interface OnEditorActionListener {
 		public boolean onEditorAction(TextView v, int actionId, KeyEvent event);
@@ -14,18 +15,26 @@ public class EditText extends View{
 		super(i);
 	}
 
-	private String text;
+	private String text = "";
 	public void setText(String name) {
+		//if(textWatcher != null)
+			//textWatcher.beforeTextChanged(s, start, count, after);
 		text = name;
-		
+		if(textWatcher != null)
+			textWatcher.afterTextChanged(this);
 	}
 
 	public String getText() {
 		return text;
 	}
+	
+	public String toString(){
+		return getText().toString();
+	}
 
+	TextWatcher textWatcher;
 	public void addTextChangedListener(TextWatcher textWatcher) {
-		
+		this.textWatcher = textWatcher;
 	}
 
 	public void setInputType(int typeClassPhone) {
@@ -36,9 +45,9 @@ public class EditText extends View{
 		return text.length();
 	}
 
-	public void setOnEditorActionListener(OnEditorActionListener onEditorActionListener) {
-		// TODO Auto-generated method stub
-		
+	OnEditorActionListener elistener;
+	public void setOnEditorActionListener(OnEditorActionListener listener) {
+		this.elistener = listener;
 	}
 
 	public void post(Runnable runnable) {
@@ -54,7 +63,7 @@ public class EditText extends View{
 	
 
 	public void removeTextChangedListener(TextWatcher textWatcher) {
-		// TODO Auto-generated method stub
+		elistener = null;
 		
 	}
 

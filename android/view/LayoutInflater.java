@@ -14,6 +14,13 @@ public class LayoutInflater {
 			v.addListView(R.id.listView1);
 			v.addButton(R.id.addPlayerConfirm);
 		}
+		if( id == R.layout.create_team_builder_layout){
+			v.addEditText(R.id.newTeam_colorET);
+			v.addEditText(R.id.newTeam_nameET);
+			v.addTextView(R.id.newTeam_previewText);
+			v.addButton(R.id.newTeam_cancel);
+			v.addButton(R.id.newTeam_submit);
+		}
 		return v;
 	}
 

@@ -18,17 +18,22 @@ public class TextView extends View{
 		return text;
 	}
 
-	public void setTextColor(int parseColor) {
-		
+	private int color;
+	public void setTextColor(int color) {
+		this.color = color;
 	}
 
-	private String text;
-	public void setText(String replace) {
-		this.text = replace;
+	private String text = "";
+	public void setText(String text) {
+		this.text = text;
 	}
 
 	public void setTextSize(Float textSize) {
 		
+	}
+
+	public int getCurrentTextColor() {
+		return color;
 	}
 
 }

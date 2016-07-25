@@ -1,5 +1,5 @@
 package android.text;
 
-public class Editable {
-
+public interface Editable {
+	
 }

@@ -28,13 +28,16 @@ public class CheckBox extends CompoundButton{
 	}
 
 	public void setTextColor(int color) {
-		// TODO Auto-generated method stub
 		
 	}
 
+	String text;
 	public void setText(String string) {
-		// TODO Auto-generated method stub
-		
+		text = string;
+	}
+
+	public String getText() {
+		return text;
 	}
 
 	

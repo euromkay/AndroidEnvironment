@@ -20,7 +20,8 @@ public class Button extends TextView{
 	}
 
 	public void click() {
-		listener.onClick(this);
+		if(listener != null)
+			listener.onClick(this);
 	}
 
 }

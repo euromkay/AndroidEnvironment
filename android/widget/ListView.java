@@ -67,4 +67,8 @@ public class ListView extends AdapterView<Object>{
 		listener.onItemClick(this, null, i, 0);
 	}
 
+	public Object size() {
+		return adapter.getCount();
+	}
+
 }
