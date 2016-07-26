@@ -64,10 +64,10 @@ public class ListView extends AdapterView<Object>{
 	}
 
 	public void click(int i) {
-		listener.onItemClick(this, null, i, 0);
+		listener.onItemClick(this, adapter.getView(i, new TextView(-1), null), i, 0);
 	}
 
-	public Object size() {
+	public int size() {
 		return adapter.getCount();
 	}
 

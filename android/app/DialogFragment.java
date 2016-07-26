@@ -17,7 +17,7 @@ public class DialogFragment {
 	}
 	
 	public Dialog onCreateDialog(Bundle b){
-		return null;
+		return new Dialog();
 	}
 	
 	public ID android = new ID();
@@ -49,8 +49,8 @@ public class DialogFragment {
 		return bundle;
 	}
 	
-	protected Dialog getDialog() {
-		return new Dialog();
+	public Dialog getDialog() {
+		return dialog;
 	}
 
 	public void onAttach(Activity a) {

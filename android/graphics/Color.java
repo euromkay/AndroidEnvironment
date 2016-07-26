@@ -2,7 +2,7 @@ package android.graphics;
 
 public class Color {
 
-	public static final int WHITE = 0;
+	public static final int WHITE = parseColor("#FFFFFF");
 
 	public static int red(int color) {
 		// TODO Auto-generated method stub
@@ -20,8 +20,7 @@ public class Color {
 	}
 
 	public static int parseColor(String string) {
-		// TODO Auto-generated method stub
-		return 0;
+		return Integer.parseInt(string.substring(1), 16);
 	}
 
 }
