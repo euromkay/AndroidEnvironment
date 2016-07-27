@@ -14,6 +14,9 @@ public class Build {
 	public static final int HONEYCOMB = 11;
 
 
+	protected static final String MANUFACTURER = "";
+
+
 	
 
 	

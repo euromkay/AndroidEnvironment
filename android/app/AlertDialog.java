@@ -5,11 +5,14 @@ import android.view.View;
 
 public class AlertDialog extends Dialog{
 
+	public AlertDialog(){
+		super(new DialogFragment());
+	}
+	
 	public static class Builder {
 
-		Dialog d = new Dialog();
 		public Builder(Activity activity) {
-			
+			d = new Dialog(new DialogFragment());
 		}
 
 		public void setView(View mainView) {
@@ -31,6 +34,7 @@ public class AlertDialog extends Dialog{
 			
 		}
 
+		Dialog d;
 		public Dialog create() {
 			return d;
 		}

@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class DialogFragment {
+public class DialogFragment{
 
 	public DialogFragment(){
 		
@@ -16,8 +16,9 @@ public class DialogFragment {
 		return null;
 	}
 	
+	Dialog dialog;
 	public Dialog onCreateDialog(Bundle b){
-		return new Dialog();
+		return dialog = new Dialog(this);
 	}
 	
 	public ID android = new ID();
@@ -26,13 +27,12 @@ public class DialogFragment {
 		this.bundle = bundle;
 	}
 
-	private Dialog dialog;
 	private Activity a;
 	private Bundle bundle;
 	public void show(FragmentManager fm, String string) {
 		this.a = fm.getActivity();
 		onAttach(a);
-		dialog = onCreateDialog(null);
+		onCreateDialog(null);
 		fm.put(this, string);
 		onCreateView(new LayoutInflater(), new ViewGroup(), null);
 	}

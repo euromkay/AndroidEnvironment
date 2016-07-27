@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import android.app.Environment;
 import android.app.Service;
 import android.content.res.Resources;
+import android.net.ConnectivityManager;
 import android.net.wifi.WifiManager;
 
 public class Context{
@@ -12,6 +13,7 @@ public class Context{
 	public static final int MODE_PRIVATE = 4;
 	public static final int BIND_AUTO_CREATE = 0;
 	protected static final int INPUT_METHOD_SERVICE = 0;
+	public static final int CONNECTIVITY_SERVICE = 1;
 
 	public Resources getResources() {
 
@@ -48,6 +50,8 @@ public class Context{
 	}
 	
 	public Object getSystemService(int i) {
+		if(i == CONNECTIVITY_SERVICE)
+			return new ConnectivityManager();
 		return new WifiManager();
 	}
 }

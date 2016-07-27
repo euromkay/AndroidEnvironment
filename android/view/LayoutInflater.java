@@ -24,6 +24,12 @@ public class LayoutInflater {
 			v.addTextView(R.id.editTeamTV1);
 			v.addTextView(R.id.editTeamTV2);
 			v.addButton(R.id.editTeamConfirm);
+		}else if(id == R.layout.home_login){
+			v.addButton(R.id.login_loginButton);
+			v.addButton(R.id.login_signup);
+			v.addButton(R.id.login_cancelLogin);
+			v.addEditText(R.id.login_username);
+			v.addEditText(R.id.login_password);
 		}
 		return v;
 	}

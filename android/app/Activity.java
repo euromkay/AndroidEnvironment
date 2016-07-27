@@ -9,19 +9,10 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.widget.RecyclerView;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.ScrollView;
-import android.widget.Spinner;
-import android.widget.TextView;
-import voss.narrator.R;
 
 
 public abstract class Activity extends ContextThemeWrapper{
@@ -52,7 +43,14 @@ public abstract class Activity extends ContextThemeWrapper{
 		
 	}
 	
+	protected void onStop(){
+		
+	}
+	
 	protected void onSaveInstanceState(Bundle b) {
+		
+	}
+	protected void onStart(){
 		
 	}
 	

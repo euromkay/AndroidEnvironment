@@ -24,6 +24,7 @@ public class View {
 	private int id;
 	public View(int i){
 		id = i;
+		setVisibility(View.VISIBLE);
 	}
 	
 	public int getId(){
