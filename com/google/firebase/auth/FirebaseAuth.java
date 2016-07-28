@@ -7,8 +7,11 @@ public class FirebaseAuth {
 		
 	}
 
+	static FirebaseAuth auth;
 	public static FirebaseAuth getInstance() {
-		return new FirebaseAuth();
+		if(auth == null)
+			auth = new FirebaseAuth();
+		return auth;
 	}
 
 	private FirebaseUser user;
@@ -32,6 +35,10 @@ public class FirebaseAuth {
 	}
 	public Task<AuthResult> createUserWithEmailAndPassword(String email, String password) {
 		return new Task<AuthResult>();
+	}
+	public static void Destroy() {
+		auth = null;
+		
 	}
 	
 }

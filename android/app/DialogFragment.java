@@ -32,7 +32,7 @@ public class DialogFragment{
 	public void show(FragmentManager fm, String string) {
 		this.a = fm.getActivity();
 		onAttach(a);
-		onCreateDialog(null);
+		dialog = onCreateDialog(null);
 		fm.put(this, string);
 		onCreateView(new LayoutInflater(), new ViewGroup(), null);
 	}

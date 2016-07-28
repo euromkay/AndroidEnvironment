@@ -17,13 +17,10 @@ public abstract class WebSocketClient {
 		public void onMessageReceive(String message);
 	}
 	
-	private WebListener wl;
-	public void setListener(WebListener wl){
-		this.wl = wl;
-	}
+	static public WebListener wl;
 
 	public void connect() {
-		
+		onOpen(null);//server handshake, don't do anything with it
 	}
 	
 	public abstract void onOpen(ServerHandshake serverHandshake);

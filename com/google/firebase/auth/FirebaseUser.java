@@ -5,13 +5,15 @@ import com.google.android.gms.tasks.Task;
 
 public class FirebaseUser {
 
-	private String username, password, displayName;
+	private String username, displayName;
 	public FirebaseUser(String username, String password){
 		this.username = username;
-		this.password = password;
+		this.displayName = this.username.replace("@sc2mafia.com", "");
 	}
 	public FirebaseUser updateProfile(UserProfileChangeRequest profileUpdates) {
 		this.displayName = profileUpdates.displayName;
+		if(this.displayName == null)
+			this.displayName = username.replace("@sc2mafia.com", "");
 		return this;
 	}
 	public void addOnCompleteListener(OnCompleteListener<Void> onCompleteListener) {
