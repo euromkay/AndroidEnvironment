@@ -1,16 +1,30 @@
 package com.google.firebase.auth;
 
+import java.util.HashMap;
+
 import com.google.android.gms.tasks.Task;
+
+import android.app.Environment;
 
 public class FirebaseAuth {
 	public interface AuthStateListener{
 		
 	}
 
-	static FirebaseAuth auth;
+	
+	public static Environment e;
+	public static HashMap<Environment, FirebaseAuth> fireMaps;
+	public FirebaseAuth auth;
 	public static FirebaseAuth getInstance() {
-		if(auth == null)
+		if (e == null)
+			throw new NullPointerException();
+		if(fireMaps == null)
+			fireMaps = new HashMap<>();
+		FirebaseAuth auth = fireMaps.get(e);
+		if(auth == null){
 			auth = new FirebaseAuth();
+			fireMaps.put(e, auth);
+		}
 		return auth;
 	}
 
@@ -35,10 +49,6 @@ public class FirebaseAuth {
 	}
 	public Task<AuthResult> createUserWithEmailAndPassword(String email, String password) {
 		return new Task<AuthResult>();
-	}
-	public static void Destroy() {
-		auth = null;
-		
 	}
 	
 }

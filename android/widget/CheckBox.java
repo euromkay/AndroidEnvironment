@@ -14,7 +14,8 @@ public class CheckBox extends CompoundButton{
 	
 	public void toggle() {
 		status = !status;
-		listener.onCheckedChanged(this, status);
+		if(listener != null)
+			listener.onCheckedChanged(this, status);
 	}
 
 	public boolean isChecked() {

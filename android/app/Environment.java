@@ -18,10 +18,16 @@ import android.widget.TextView;
 
 public class Environment {
 
+	public interface EnvironmentListener{
+		public void onActivityChange(Activity a, Environment e);
+	}
+	
 	ArrayList<View> views;
-	public Environment(){
+	EnvironmentListener el;
+	public Environment(EnvironmentListener el){
 		Log.i = false;
 		views = new ArrayList<>();
+		this.el = el;
 	}
 	
 	
@@ -86,6 +92,7 @@ public class Environment {
 		String name = class1.getName();
 		try {
 			a = (Activity) Class.forName(name).newInstance();
+			el.onActivityChange(a, this);
 			a.setEnv(this);
 			a.setIntent(i);
 			for(View v: views)

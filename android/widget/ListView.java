@@ -64,7 +64,8 @@ public class ListView extends AdapterView<Object>{
 	}
 
 	public void click(int i) {
-		listener.onItemClick(this, adapter.getView(i, new TextView(-1), null), i, 0);
+		if(listener != null)
+			listener.onItemClick(this, adapter.getView(i, new TextView(-1), null), i, 0);
 	}
 
 	public int size() {
