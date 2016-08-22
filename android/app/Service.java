@@ -24,5 +24,7 @@ public abstract class Service extends ContextWrapper{
 	}
 
 	public abstract void shutdown();
-
+	
+	public void onDestroy(){
+	}
 }

@@ -2,6 +2,8 @@ package android.app;
 
 import java.util.HashMap;
 
+import android.os.Bundle;
+
 public class FragmentManager {
 
 	Activity a;
@@ -15,7 +17,7 @@ public class FragmentManager {
 
 		
 	}
-	public DialogFragment get(String string) {
+	public DialogFragment getFragment(Bundle b, String string) {
 		return map.get(string);
 		
 	}

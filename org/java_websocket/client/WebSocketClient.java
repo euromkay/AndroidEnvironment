@@ -25,7 +25,7 @@ public abstract class WebSocketClient {
 	
 	public abstract void onOpen(ServerHandshake serverHandshake);
 	public abstract void onMessage(String s);
-	public abstract void onClose(int i, String s, boolean b);
+	public abstract void onClose(int code, String reason, boolean remote);
 	public abstract void onError(Exception e);
 
 }

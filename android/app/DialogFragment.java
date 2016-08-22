@@ -1,5 +1,6 @@
 package android.app;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -53,8 +54,8 @@ public class DialogFragment{
 		return dialog;
 	}
 
-	public void onAttach(Activity a) {
-
+	public void onAttach(Context a) {
+		
 		
 	}
 	

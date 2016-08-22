@@ -25,6 +25,10 @@ public class Context{
 		
 	}
 	
+	public void onAttach(Context c){
+		
+	}
+	
 	public void startService(Intent intent) {
 		Service c = e.startService(intent.c1, intent);
 		c.onStartCommand(intent, 0, 0);

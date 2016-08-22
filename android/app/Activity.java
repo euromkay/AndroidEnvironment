@@ -29,6 +29,10 @@ public abstract class Activity extends ContextThemeWrapper{
 		
 	}
 	
+	public void runOnUiThread(Runnable runnable) {
+		runnable.run();
+	}
+	
 	protected void requestWindowFeature(int featureNoTitle) {
 		
 	}

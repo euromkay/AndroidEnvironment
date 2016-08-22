@@ -23,6 +23,10 @@ public class EditText extends View implements Editable{
 		if(textWatcher != null)
 			textWatcher.afterTextChanged(this);
 	}
+	
+	public void inputText(String message){
+		setText(message);
+	}
 
 	public String getText() {
 		return text;
