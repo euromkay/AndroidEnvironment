@@ -28,4 +28,8 @@ public abstract class WebSocketClient {
 	public abstract void onClose(int code, String reason, boolean remote);
 	public abstract void onError(Exception e);
 
+	public WebSocketImpl getConnection() {
+		return new WebSocketImpl();
+	}
+
 }
