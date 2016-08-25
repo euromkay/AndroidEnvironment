@@ -29,6 +29,10 @@ public abstract class Activity extends ContextThemeWrapper{
 		
 	}
 	
+	public View getCurrentFocus(){
+		return new View(-1);
+	}
+	
 	public void runOnUiThread(Runnable runnable) {
 		runnable.run();
 	}
@@ -79,7 +83,7 @@ public abstract class Activity extends ContextThemeWrapper{
 	}
 	
 	public void finish(){
-		
+		getEnvironment().finish(this);
 	}
 	
 	

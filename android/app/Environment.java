@@ -28,6 +28,7 @@ public class Environment {
 		Log.i = false;
 		views = new ArrayList<>();
 		this.el = el;
+		aList = new ArrayList<>();
 	}
 	
 	
@@ -87,17 +88,19 @@ public class Environment {
 		}
 	}
 	
-	private Activity a;
+	private ArrayList<Activity> aList;
 	public Activity startActivity(Class<?> class1, Intent i) {
 		String name = class1.getName();
 		try {
-			a = (Activity) Class.forName(name).newInstance();
+			Activity a = (Activity) Class.forName(name).newInstance();
+			aList.add(a);
 			el.onActivityChange(a, this);
 			a.setEnv(this);
 			a.setIntent(i);
 			for(View v: views)
 				a.i_view.put(v.getId(), v);
 			a.onCreate(null);
+			a.onResume();
 			i.a = null;
 			
 			
@@ -113,7 +116,7 @@ public class Environment {
 	}
 
 	public Activity getActive() {
-		return a;
+		return aList.get(aList.size() - 1);
 	}
 
 	
@@ -157,6 +160,12 @@ public class Environment {
 	}
 	public HashMap<Integer, String[]> getResources(){
 		return resources;
+	}
+
+
+
+	public void finish(Activity activity) {
+		aList.remove(activity);
 	}
 
 	

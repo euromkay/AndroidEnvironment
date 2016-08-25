@@ -71,4 +71,12 @@ public class EditText extends View implements Editable{
 		
 	}
 
+	public boolean hasFocus() {
+		return false;
+	}
+
+	public boolean isFocused() {
+		return false;
+	}
+
 }

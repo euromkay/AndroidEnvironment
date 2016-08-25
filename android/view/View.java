@@ -2,6 +2,7 @@ package android.view;
 
 import java.util.HashMap;
 
+import android.os.IBinder;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -69,5 +70,13 @@ public class View {
 	public void addButton(int id) {
 		map.put(id, new Button(id));
 		
+	}
+
+	public IBinder getWindowToken() {
+		return null;
+	}
+
+	public int getBottom() {
+		return 1;
 	}
 }

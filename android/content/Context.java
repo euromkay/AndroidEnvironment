@@ -7,6 +7,7 @@ import android.app.Service;
 import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.net.wifi.WifiManager;
+import android.view.inputmethod.InputMethodManager;
 
 public class Context{
 
@@ -56,6 +57,8 @@ public class Context{
 	public Object getSystemService(int i) {
 		if(i == CONNECTIVITY_SERVICE)
 			return new ConnectivityManager();
+		if(i == INPUT_METHOD_SERVICE)
+			return new InputMethodManager();
 		return new WifiManager();
 	}
 }

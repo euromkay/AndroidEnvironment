@@ -23,4 +23,20 @@ public class ScrollView extends View{
 		
 	}
 
+	public int getChildCount() {
+		return 0;
+	}
+
+	public View getChildAt(int i) {
+		return new View(-1);
+	}
+
+	public int getHeight() {
+		return 0;
+	}
+
+	public int getScrollY() {
+		return -1;
+	}
+
 }
