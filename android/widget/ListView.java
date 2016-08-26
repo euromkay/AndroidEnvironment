@@ -43,8 +43,11 @@ public class ListView extends AdapterView<Object>{
 	}
 
 	public int getCheckedItemPosition() {
-
-		return 0;
+		for(int i = 0; i < checkedItems.length(); i++){
+			if(checkedItems.get(i))
+				return i;
+		}
+		return -1;
 	}
 
 	public void post(Runnable runnable) {
@@ -64,6 +67,7 @@ public class ListView extends AdapterView<Object>{
 	}
 
 	public void click(int i) {
+		checkedItems.put(i, true);
 		if(listener != null)
 			listener.onItemClick(this, adapter.getView(i, new TextView(-1), null), i, 0);
 	}

@@ -32,6 +32,7 @@ public class FirebaseAuth {
 	public FirebaseUser getCurrentUser() {
 		return user;
 	}
+	@SuppressWarnings("unused")
 	private AuthStateListener listener;
 	public void addAuthStateListener(AuthStateListener mAuthListener) {
 		listener = mAuthListener;

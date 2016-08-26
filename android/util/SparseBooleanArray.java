@@ -14,4 +14,7 @@ public class SparseBooleanArray {
 		return arr[i];
 	}
 
+	public int length(){
+		return arr.length;
+	}
 }
