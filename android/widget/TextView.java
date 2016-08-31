@@ -36,4 +36,7 @@ public class TextView extends View{
 		return color;
 	}
 
+	public String toString(){
+		return text;
+	}
 }
