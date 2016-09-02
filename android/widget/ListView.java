@@ -76,4 +76,8 @@ public class ListView extends AdapterView<Object>{
 		return adapter.getCount();
 	}
 
+	public boolean isItemChecked(int position) {
+		return checkedItems.get(position);
+	}
+
 }
