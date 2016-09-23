@@ -39,4 +39,9 @@ public class TextView extends View{
 	public String toString(){
 		return text;
 	}
+
+	public float getTextSize() {
+		// TODO Auto-generated method stub
+		return 1;
+	}
 }

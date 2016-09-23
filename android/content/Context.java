@@ -15,6 +15,7 @@ public class Context{
 	public static final int BIND_AUTO_CREATE = 0;
 	protected static final int INPUT_METHOD_SERVICE = 0;
 	public static final int CONNECTIVITY_SERVICE = 1;
+	public static final int LAYOUT_INFLATER_SERVICE = 3;
 
 	public Resources getResources() {
 
