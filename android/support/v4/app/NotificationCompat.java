@@ -2,6 +2,7 @@ package android.support.v4.app;
 
 import android.app.PendingIntent;
 import android.content.Context;
+import android.support.v4.app.NotificationCompat.Builder;
 
 public class NotificationCompat {
 
@@ -27,14 +28,19 @@ public class NotificationCompat {
 			return this;
 		}
 
-		public void setContentIntent(PendingIntent resultPendingIntent) {
-			// TODO Auto-generated method stub
+		public Builder setContentIntent(PendingIntent resultPendingIntent) {
+			return this;
 			
 		}
 
 		public Object build() {
 			// TODO Auto-generated method stub
 			return null;
+		}
+
+		public Builder setAutoCancel(boolean b) {
+			// TODO Auto-generated method stub
+			return this;
 		}
 
 	}

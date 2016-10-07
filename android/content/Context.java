@@ -16,6 +16,7 @@ public class Context{
 	protected static final int INPUT_METHOD_SERVICE = 0;
 	public static final int CONNECTIVITY_SERVICE = 1;
 	public static final int LAYOUT_INFLATER_SERVICE = 3;
+	public static final int NOTIFICATION_SERVICE = 4;
 
 	public Resources getResources() {
 

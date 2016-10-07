@@ -9,6 +9,7 @@ import android.os.Parcelable;
 
 public class Intent {
 
+	public static final int FLAG_ACTIVITY_CLEAR_TOP = 0;
 	public Context a;
 	public Class<?> c1;
 	public Intent(Context a, Class<?> class1) {
@@ -21,6 +22,9 @@ public class Intent {
 		bundle = new Bundle();
 	}
 	
+	public Intent(String string) {
+	}
+
 	public void setBundle(Bundle b){
 		bundle = b;
 	}
@@ -84,6 +88,11 @@ public class Intent {
 	public boolean hasExtra(String id) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	public void addFlags(int flagActivityClearTop) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
