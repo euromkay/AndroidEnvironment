@@ -5,7 +5,7 @@ import android.view.View;
 public class AdapterView<T> extends View{
 
 	public interface OnItemSelectedListener {
-
+		void onItemSelected(AdapterView<?> parent, View view, int position, long id);
 	}
 
 	public AdapterView(int i) {

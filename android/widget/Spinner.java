@@ -5,15 +5,16 @@ import java.util.ArrayList;
 import android.view.View;
 import android.widget.AdapterView.OnItemSelectedListener;
 
-public class Spinner extends View{
+public class Spinner extends AdapterView{
 
 	public Spinner(int i) {
 		super(i);
 
 	}
-
-	public void setOnItemSelectedListener(OnItemSelectedListener activityDay) {
-		
+	
+	OnItemSelectedListener listener;
+	public void setOnItemSelectedListener(OnItemSelectedListener listener) {
+		this.listener = listener;
 	}
 
 	public ArrayList<String> data;
@@ -33,6 +34,7 @@ public class Spinner extends View{
 	private int index = 0;
 	public void setSelection(int id) {
 		index = id;
+		listener.onItemSelected(this, null, id, -1);
 	}
 
 	public void setGravity(int center) {
