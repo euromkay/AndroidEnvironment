@@ -2,9 +2,6 @@ package android.widget;
 
 import java.util.ArrayList;
 
-import android.view.View;
-import android.widget.AdapterView.OnItemSelectedListener;
-
 public class Spinner extends AdapterView{
 
 	public Spinner(int i) {
