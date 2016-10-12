@@ -73,6 +73,8 @@ public class ListView extends AdapterView<Object>{
 	}
 
 	public int size() {
+		if(adapter == null)
+			return 0;
 		return adapter.getCount();
 	}
 
