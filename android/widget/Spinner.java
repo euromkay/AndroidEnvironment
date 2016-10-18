@@ -2,7 +2,7 @@ package android.widget;
 
 import java.util.ArrayList;
 
-public class Spinner extends AdapterView{
+public class Spinner extends AdapterView<SpinnerAdapter>{
 
 	public Spinner(int i) {
 		super(i);
