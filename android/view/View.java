@@ -4,11 +4,12 @@ import java.util.HashMap;
 
 import android.os.IBinder;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class View {
+public class View implements ViewParent{
 	
 	public interface OnClickListener{
 		public void onClick(View v);
@@ -42,11 +43,11 @@ public class View {
 	}
 
 	public void addEditText(int id) {
-		map.put(id, new EditText(id));
+		addChildView(new EditText(id));
 	}
 	
 	public void addTextView(int id){
-		map.put(id, new TextView(id));
+		addChildView(new TextView(id));
 	}
 
 	public void setOnClickListener(OnClickListener onClickListener) {
@@ -63,13 +64,11 @@ public class View {
 	}
 
 	public void addListView(int id) {
-		map.put(id, new ListView(id));
-		
+		addChildView(new ListView(id));
 	}
 
 	public void addButton(int id) {
-		map.put(id, new Button(id));
-		
+		addChildView(new Button(id));
 	}
 
 	public IBinder getWindowToken() {
@@ -78,5 +77,25 @@ public class View {
 
 	public int getBottom() {
 		return 1;
+	}
+
+	public void addCheckbox(int id) {
+		addChildView(new CheckBox(id));
+	}
+	
+	public void addChildView(View v){
+		int id = v.getId();
+		map.put(id, v);
+		v.setParent(this);
+	}
+
+	ViewGroup parent;
+	public View setParent(View view) {
+		parent = new ViewGroup(view);
+		return this;
+	}
+
+	public ViewParent getParent() {
+		return parent;
 	}
 }

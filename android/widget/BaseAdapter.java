@@ -8,10 +8,7 @@ public abstract class BaseAdapter {
 	public abstract int getCount();
 
 	
-	public View getView(int position, View convertView, ViewGroup parent) {
-		
-		return null;
-	}
+	public abstract View getView(int position, View convertView, ViewGroup parent);
 
 
 	public abstract Object getItem(int i);

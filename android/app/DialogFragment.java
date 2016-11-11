@@ -35,7 +35,7 @@ public class DialogFragment{
 		onAttach(a);
 		dialog = onCreateDialog(null);
 		fm.put(this, string);
-		onCreateView(new LayoutInflater(), new ViewGroup(), null);
+		onCreateView(new LayoutInflater(), new ViewGroup(new View(0)), null);
 	}
 	
 	public void dismiss() {

@@ -7,6 +7,7 @@ import android.app.Service;
 import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.net.wifi.WifiManager;
+import android.view.LayoutInflater;
 import android.view.inputmethod.InputMethodManager;
 
 public class Context{
@@ -61,6 +62,8 @@ public class Context{
 			return new ConnectivityManager();
 		if(i == INPUT_METHOD_SERVICE)
 			return new InputMethodManager();
+		if(i == LAYOUT_INFLATER_SERVICE)
+			return new LayoutInflater();
 		return new WifiManager();
 	}
 }

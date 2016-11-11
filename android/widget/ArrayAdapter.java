@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
 
 public class ArrayAdapter<T> extends BaseAdapter{
 
@@ -29,6 +31,11 @@ public class ArrayAdapter<T> extends BaseAdapter{
 
 	public Object getItem(int i) {
 		return data.get(i);
+	}
+
+
+	public View getView(int position, View convertView, ViewGroup parent) {
+		return new TextView(0);
 	}
 	
 	

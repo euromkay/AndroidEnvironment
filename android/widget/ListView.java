@@ -1,6 +1,9 @@
 package android.widget;
 
+import java.util.ArrayList;
+
 import android.util.SparseBooleanArray;
+import android.view.View;
 
 public class ListView extends AdapterView<Object>{
 
@@ -8,6 +11,7 @@ public class ListView extends AdapterView<Object>{
 
 	public ListView(int i) {
 		super(i);
+		views = new ArrayList<>();
 	}
 
 	public void setTranscriptMode(int transcriptModeNormal) {
@@ -20,9 +24,15 @@ public class ListView extends AdapterView<Object>{
 
 	SparseBooleanArray checkedItems;
 	public BaseAdapter adapter;
+	public ArrayList<View> views;
 	public void setAdapter(BaseAdapter listingAdapter) {
 		adapter = listingAdapter;
 		checkedItems = new SparseBooleanArray(listingAdapter.getCount());
+		
+		for(int i = 0; i < listingAdapter.getCount(); i++){
+			views.add(i, listingAdapter.getView(i, null, null).setParent(this));
+		}
+		
 	}
 
 	OnItemClickListener listener;
@@ -69,7 +79,7 @@ public class ListView extends AdapterView<Object>{
 	public void click(int i) {
 		checkedItems.put(i, true);
 		if(listener != null)
-			listener.onItemClick(this, adapter.getView(i, new TextView(-1), null), i, 0);
+			listener.onItemClick(this, views.get(i), i, 0);
 	}
 
 	public int size() {
@@ -80,6 +90,16 @@ public class ListView extends AdapterView<Object>{
 
 	public boolean isItemChecked(int position) {
 		return checkedItems.get(position);
+	}
+
+	public View getChildAt(int position) {
+		return views.get(position);
+	}
+
+	public void notifyDataSetChanged() {
+		for(int i = 0; i < adapter.getCount(); i++){
+			views.add(i, adapter.getView(i, null, null).setParent(this));
+		}
 	}
 
 }

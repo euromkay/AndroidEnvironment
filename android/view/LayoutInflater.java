@@ -1,5 +1,6 @@
 package android.view;
 
+import android.widget.TextView;
 import voss.narrator.R;
 
 public class LayoutInflater {
@@ -30,6 +31,11 @@ public class LayoutInflater {
 			v.addButton(R.id.login_cancelLogin);
 			v.addEditText(R.id.login_username);
 			v.addEditText(R.id.login_password);
+		}else if(id == R.layout.action_target_view){
+			v.addTextView(R.id.target_name);
+			v.addCheckbox(R.id.target_r1);
+			v.addCheckbox(R.id.target_r3);
+			v.addCheckbox(R.id.target_r2);
 		}
 		return v;
 	}
@@ -38,8 +44,13 @@ public class LayoutInflater {
 		return new LayoutInflater();
 	}
 
-	public View inflate(int playerItem, ViewGroup parent, boolean b) {
-		// TODO Auto-generated method stub
+	public View inflate(int id, ViewGroup parent, boolean b) {
+		
+		if(id == R.layout.create_roles_right_item)
+			return new TextView(0);
+		else if(id == R.layout.create_roles_left_item)
+			return new TextView(0);
+		
 		return null;
 	}
 
