@@ -27,8 +27,10 @@ public class ListView extends AdapterView<Object>{
 	public ArrayList<View> views;
 	public void setAdapter(BaseAdapter listingAdapter) {
 		adapter = listingAdapter;
+		adapter.parent = this;
 		checkedItems = new SparseBooleanArray(listingAdapter.getCount());
 		
+		views.clear();
 		for(int i = 0; i < listingAdapter.getCount(); i++){
 			views.add(i, listingAdapter.getView(i, null, null).setParent(this));
 		}
@@ -94,12 +96,6 @@ public class ListView extends AdapterView<Object>{
 
 	public View getChildAt(int position) {
 		return views.get(position);
-	}
-
-	public void notifyDataSetChanged() {
-		for(int i = 0; i < adapter.getCount(); i++){
-			views.add(i, adapter.getView(i, null, null).setParent(this));
-		}
 	}
 
 }

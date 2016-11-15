@@ -25,7 +25,8 @@ public class CheckBox extends CompoundButton{
 	boolean status;
 	public void setChecked(boolean b) {
 		status = b;
-		
+		if(listener != null)
+			listener.onCheckedChanged(this, status);
 	}
 
 	public void setTextColor(int color) {
