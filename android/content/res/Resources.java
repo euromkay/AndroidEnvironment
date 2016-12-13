@@ -21,4 +21,9 @@ public class Resources {
 		return resourceMap.get(id);
 	}
 
+	public Integer getIdentifier(String string, String string2, Object packageName) {
+		// TODO Auto-generated method stub
+		return 3;
+	}
+
 }

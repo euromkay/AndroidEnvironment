@@ -28,6 +28,10 @@ public class TextView extends View{
 		this.text = text;
 	}
 
+	public void setTextSize(int i){
+		
+	}
+	
 	public void setTextSize(Float textSize) {
 		
 	}

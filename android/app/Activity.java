@@ -70,9 +70,7 @@ public abstract class Activity extends ContextThemeWrapper{
 	
 	
 
-	public Object getAssets() {
-		return null;
-	}
+	
 	public boolean dispatchTouchEvent(MotionEvent me) {
 		return false;
 	}
@@ -138,7 +136,7 @@ public abstract class Activity extends ContextThemeWrapper{
 	public void onDestroy() {
 		
 	}
-	protected Object getPackageName() {
+	public Object getPackageName() {
 		// TODO Auto-generated method stub
 		return null;
 	}

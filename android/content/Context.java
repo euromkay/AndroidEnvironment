@@ -66,4 +66,12 @@ public class Context{
 			return new LayoutInflater();
 		return new WifiManager();
 	}
+	
+	public Object getAssets() {
+		return null;
+	}
+
+	public Object getPackageName() {
+		return "";
+	}
 }
