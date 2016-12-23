@@ -32,4 +32,6 @@ public abstract class WebSocketClient {
 		return new WebSocketImpl();
 	}
 
+	public void close() {}
+
 }
