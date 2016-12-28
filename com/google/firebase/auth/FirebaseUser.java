@@ -23,4 +23,10 @@ public class FirebaseUser {
 	public String getDisplayName() {
 		return displayName;
 	}
+	public Task<GetTokenResult> getToken(boolean b) {
+		Task<GetTokenResult> x = new Task<GetTokenResult>();
+		GetTokenResult gtr = new GetTokenResult();
+		x.setResult(gtr);
+		return x;
+	}
 }

@@ -5,10 +5,11 @@ import java.util.HashMap;
 import com.google.android.gms.tasks.Task;
 
 import android.app.Environment;
+import android.support.annotation.NonNull;
 
 public class FirebaseAuth {
 	public interface AuthStateListener{
-		
+		public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth);
 	}
 
 	
