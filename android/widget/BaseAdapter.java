@@ -16,7 +16,7 @@ public abstract class BaseAdapter {
 	public abstract Object getItem(int i);
 	
 	public void notifyDataSetChanged() {
-		for(int i = 0; i < parent.views.size(); i++)
+		for(int i = 0; i < Integer.min(parent.views.size(), getCount()); i++)
 			getView(i, parent.views.get(i), null);
 	}
 

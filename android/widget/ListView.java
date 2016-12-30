@@ -98,4 +98,22 @@ public class ListView extends AdapterView<Object>{
 		return views.get(position);
 	}
 
+	public int getChildCount() {
+		// TODO Auto-generated method stub
+		return 1;
+	}
+
+	public int getLastVisiblePosition() {
+		return -400;
+	}
+
+	public BaseAdapter getAdapter() {
+		return adapter;
+	}
+
+	public int getHeight() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

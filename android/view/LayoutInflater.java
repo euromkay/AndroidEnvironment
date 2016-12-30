@@ -7,7 +7,10 @@ public class LayoutInflater {
 
 	public View inflate(int id, Object object) {
 		View v = new View(id);
-		if (id == R.layout.alert_name_prompt)
+		if (id == R.layout.chat_item){
+			v.addTextView(R.id.chat_item_text);
+			v.addTextView(R.id.chat_item_sender);
+		}else if(id == R.layout.alert_name_prompt)
 			v.addEditText(R.id.home_nameET);
 		else if( id == R.layout.create_player_list){
 			v.addEditText(R.id.addPlayerContent);
@@ -49,6 +52,8 @@ public class LayoutInflater {
 		if(id == R.layout.create_roles_right_item)
 			return new TextView(0);
 		else if(id == R.layout.create_roles_left_item)
+			return new TextView(0);
+		if(id == R.layout.chat_item)
 			return new TextView(0);
 		
 		return null;

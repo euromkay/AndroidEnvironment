@@ -25,6 +25,8 @@ public abstract class Activity extends ContextThemeWrapper{
 		
 	}
 	
+	public void moveTaskToBack(boolean b){}
+	
 	public void setRequestedOrientation(int i){
 		
 	}

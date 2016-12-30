@@ -23,7 +23,7 @@ public class Spinner extends AdapterView<SpinnerAdapter>{
 		index = 0;
 	}
 
-	public String getSelectedItem() {
+	public Object getSelectedItem() {
 		return data.get(index);//TODO
 	}
 
