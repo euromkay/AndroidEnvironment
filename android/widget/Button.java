@@ -6,15 +6,6 @@ public class Button extends TextView{
 		super(i);
 	}
 
-	OnClickListener listener;
-	public void setOnClickListener(OnClickListener b) {
-		listener = b;
-	}
 
-
-	public void click() {
-		if(listener != null)
-			listener.onClick(this);
-	}
 
 }

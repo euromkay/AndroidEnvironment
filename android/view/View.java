@@ -29,6 +29,17 @@ public class View implements ViewParent{
 		setVisibility(View.VISIBLE);
 	}
 	
+	OnClickListener listener;
+	public void setOnClickListener(OnClickListener b) {
+		listener = b;
+	}
+
+
+	public void click() {
+		if(listener != null)
+			listener.onClick(this);
+	}
+	
 	public int getId(){
 		return id;
 	}
@@ -48,10 +59,6 @@ public class View implements ViewParent{
 	
 	public void addTextView(int id){
 		addChildView(new TextView(id));
-	}
-
-	public void setOnClickListener(OnClickListener onClickListener) {
-		
 	}
 
 	private int visiblility;
@@ -97,5 +104,9 @@ public class View implements ViewParent{
 
 	public ViewParent getParent() {
 		return parent;
+	}
+
+	public boolean hasOnClickListeners() {
+		return listener != null;
 	}
 }

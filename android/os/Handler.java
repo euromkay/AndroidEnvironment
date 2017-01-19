@@ -7,6 +7,8 @@ public class Handler {
 		this.c = wifiHost;
 	}
 
+	public Handler() {}
+
 	public interface Callback {
 		boolean handleMessage(Message msg);
 	}
@@ -17,6 +19,11 @@ public class Handler {
 
 	public Message obtainMessage(int what, int bytes, int i, Object[] objects) {
 		return new Message(this, what, objects, bytes);
+	}
+
+	public void postDelayed(Runnable runnable, int i) {
+		runnable.run();
+		
 	}
 
 }

@@ -107,6 +107,11 @@ public abstract class Activity extends ContextThemeWrapper{
 	public void onPause() {
 		
 	}
+	
+	public void onRestart() {
+		// TODO Auto-generated method stub
+		
+	}
 	public LayoutInflater getLayoutInflater() {
 		return new LayoutInflater();
 	}

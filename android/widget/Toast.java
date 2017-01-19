@@ -17,4 +17,9 @@ public class Toast {
 
 	public void cancel() {}
 
+	public void setText(String string) {
+		text = string;
+		
+	}
+
 }
